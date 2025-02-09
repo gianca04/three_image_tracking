@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#scene-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#ar-controls-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px; /* Alineado a la izquierda */
+    display: none;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Acomoda los botones en vertical */
+    gap: 10px;
+}
+
+/* Estilos de los botones */
+#ar-controls-container button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Hace que los botones sean redondos */
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover */
+#ar-controls-container button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Íconos dentro de los botones */
+#ar-controls-container button i {
+    pointer-events: none; /* Evita que los clics se registren en el ícono */
+}
