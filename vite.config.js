@@ -2,17 +2,19 @@ import { defineConfig } from 'vite';
 import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig({
-  plugins: [basicSsl()],
+  plugins: [basicSsl()], // Soporte para HTTPS local
 
   build: {
     rollupOptions: {
-      external: ['three'] // Indica a Rollup que no incluya 'three' en el bundle final
+      // ❌ Elimina esto porque necesitas "three" localmente
+      // external: ['three']
     }
   },
 
-  base: '/',
+  base: './', // 🔥 Mejor para Netlify y evitar problemas con rutas
 
   server: {
-    host: true // Permite acceder desde la red local (npx vite --host)
+    host: true, // Permitir acceso desde la red local
+    port: 5173  // (Opcional) Define un puerto específico
   }
 });
