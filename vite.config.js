@@ -10,6 +10,8 @@ export default defineConfig({
     }
   },
 
+  base: '/',
+
   server: {
     host: true // Permite acceder desde la red local (npx vite --host)
   }
