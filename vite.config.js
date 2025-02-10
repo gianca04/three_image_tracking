@@ -4,14 +4,17 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 export default defineConfig({
   plugins: [basicSsl()], // Soporte para HTTPS local
 
+  optimizeDeps: {
+    include: ['three'], // ✅ Asegura que Three.js se procese en desarrollo
+  },
+
   build: {
     rollupOptions: {
-      // ❌ Elimina esto porque necesitas "three" localmente
-      // external: ['three']
+      external: [], // ✅ No excluyas "three" para que esté en el bundle
     }
   },
 
-  base: './', // 🔥 Mejor para Netlify y evitar problemas con rutas
+  base: './', // ✅ Útil para Netlify y entornos con rutas relativas
 
   server: {
     host: true, // Permitir acceso desde la red local
