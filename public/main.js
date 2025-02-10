@@ -3,6 +3,8 @@ import * as THREE from "three";
 import { ARButton } from 'three/examples/jsm/webxr/ARButton.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
+//iMPORTACIÓN CORRECTA
+
 // Variables globales para el control de audio y botones AR
 let isMuted = false;
 const arVideos = []; // Aquí se guardarán los elementos de video de cada ARVideoEffect
